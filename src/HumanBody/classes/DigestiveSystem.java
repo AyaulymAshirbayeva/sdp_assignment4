@@ -1,4 +1,5 @@
 package HumanBody.classes;
+
 public class DigestiveSystem implements HumanBodyProcesses {
     private double absorbedAmount;
     @Override

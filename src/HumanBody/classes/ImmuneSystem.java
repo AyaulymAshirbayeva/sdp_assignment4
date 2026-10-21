@@ -1,7 +1,7 @@
 package HumanBody.classes;
 
 public class ImmuneSystem implements HumanBodyProcesses {
-    private double inflammationLevel = 6;
+    private double inflammationLevel = 8;
     @Override
     public void process(double amount) {
         validateAmount(amount);

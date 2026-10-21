@@ -7,6 +7,5 @@ public interface HumanBodyProcesses {
             throw new IllegalArgumentException(
                     "Amount must be positive."
             );
-        }
-    }
+        }}
 }

@@ -1,5 +1,4 @@
 package HumanBody.facade;
-import HumanBody.classes.BodyStatusFacade;
 
 public class Main {
     public static void main(String[] args) {

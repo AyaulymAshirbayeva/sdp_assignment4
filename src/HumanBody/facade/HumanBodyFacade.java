@@ -1,36 +1,20 @@
 package HumanBody.facade;
-
 import HumanBody.classes.*;
 
 public class HumanBodyFacade {
-
-    private final DigestiveSystem digestive = new DigestiveSystem();
-    private final BloodSystem blood = new BloodSystem();
-    private final NervousSystem nervous = new NervousSystem();
-    private final ImmuneSystem immune = new ImmuneSystem();
-    private final LiverAndKidneys liverAndKidneys = new LiverAndKidneys();
+    HumanBodyProcesses digestive = new DigestiveSystem();
+    HumanBodyProcesses blood = new BloodSystem();
+    HumanBodyProcesses nervous = new NervousSystem();
+    HumanBodyProcesses immune = new ImmuneSystem();
+    HumanBodyProcesses liverAndKidneys = new LiverAndKidneys();
 
     public void takePill(double amount) {
-        System.out.println("\n--- Body Processes ---");
+        System.out.println("Taking a pill...");
         digestive.process(amount);
-        blood.process(digestive.getAbsorbedAmount());
-
-        double bloodAmount = blood.getBloodAmount();
-
+        blood.process(((DigestiveSystem) digestive).getAbsorbedAmount());
+        double bloodAmount = ((BloodSystem) blood).getBloodAmount();
         nervous.process(bloodAmount);
         immune.process(bloodAmount);
         liverAndKidneys.process(bloodAmount);
-    }
-
-    public NervousSystem getNervousSystem() {
-        return nervous;
-    }
-
-    public ImmuneSystem getImmuneSystem() {
-        return immune;
-    }
-
-    public LiverAndKidneys getLiverAndKidneys() {
-        return liverAndKidneys;
     }
 }

@@ -1,4 +1,5 @@
 package HumanBody.classes;
+
 public class BloodSystem implements HumanBodyProcesses{
     private double bloodAmount;
     @Override
